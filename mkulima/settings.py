@@ -41,9 +41,15 @@ INSTALLED_APPS = [
     'mkulimapp',
     'cloudinary_storage',
     'rest_framework',
+    'knox',
+    'corsheaders',
 ]
 
+CORS_ORIGIN_ALLOW_ALL = True
+CORS_ORIGIN_WHITELIST =("http://localhost:4200"),
+ # Angular server in development]
 MIDDLEWARE = [
+    'corsheader.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -103,7 +109,7 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-AUTH_USER_MODEL="mkulimapp.User"
+# AUTH_USER_MODEL="mkulimapp.User"
 
 
 # Internationalization

@@ -4,9 +4,9 @@ from django.contrib.auth.models import AbstractUser
 from django.contrib.auth.models import User
 
 # Create your models here.
-class User(AbstractUser):
-    is_farmer =models.BooleanField(default=False)
-    is_vendor =models.BooleanField(default=False)
+# class User(AbstractUser):
+#     is_farmer =models.BooleanField(default=False)
+#     is_vendor =models.BooleanField(default=False)
     
 
 
