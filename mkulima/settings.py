@@ -41,11 +41,14 @@ INSTALLED_APPS = [
     'mkulimapp',
     'cloudinary_storage',
     'rest_framework',
+    'knox',
+    'corsheaders',
 ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -103,7 +106,7 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-AUTH_USER_MODEL="mkulimapp.User"
+# AUTH_USER_MODEL="mkulimapp.User"
 
 
 # Internationalization
@@ -146,4 +149,9 @@ CLOUDINARY_STORAGE = {
     'API_SECRET': "0240v9-0fKizvoAw78DJ7_FNcJ8",
 }
 
+# REST_FRAMEWORK = {
+#     'DEFAULT_AUTHENTICATION_CLASSES': ('knox.auth.TokenAuthentication',)
+# }
 
+CORS_ORIGIN_ALLOW_ALL = True
+CORS_ALLOW_CREDENTIALS = True
